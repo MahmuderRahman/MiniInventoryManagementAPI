@@ -6,6 +6,9 @@
   DTO: API response manage
   AutoMapper: model to DTO mapping
 
+ ## Framework
+  .NET 8.0
+
  ## Project Structure
   Controllers: API and MVC controllers
   Models: Entity models
