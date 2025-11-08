@@ -1,0 +1,116 @@
+[
+  {
+    "ContainingType": "MiniInventoryManagementAPI.Controllers.Order.API.OrderControllerApi",
+    "Method": "CreateOrder",
+    "RelativePath": "api/order/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MiniInventoryManagementAPI.DTOs.OrderDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiniInventoryManagementAPI.Controllers.Order.API.OrderControllerApi",
+    "Method": "GetAllOrders",
+    "RelativePath": "api/order/get-all-order",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiniInventoryManagementAPI.Controllers.Product.API.ProductControllerApi",
+    "Method": "CreateProduct",
+    "RelativePath": "api/product/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MiniInventoryManagementAPI.DTOs.ProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiniInventoryManagementAPI.Controllers.Product.API.ProductControllerApi",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/product/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiniInventoryManagementAPI.Controllers.Product.API.ProductControllerApi",
+    "Method": "GetAllProducts",
+    "RelativePath": "api/product/get-all-products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiniInventoryManagementAPI.Controllers.Product.API.ProductControllerApi",
+    "Method": "GetProductDropDown",
+    "RelativePath": "api/product/get-product-dropdown",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiniInventoryManagementAPI.Controllers.Product.API.ProductControllerApi",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/product/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MiniInventoryManagementAPI.DTOs.ProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiniInventoryManagementAPI.Controllers.Order.OrderController",
+    "Method": "Index",
+    "RelativePath": "order/view",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiniInventoryManagementAPI.Controllers.Product.ProductController",
+    "Method": "Index",
+    "RelativePath": "product/view",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,99 @@
+﻿@model MiniInventoryManagementAPI.DTOs.OrderDto
+@{
+	ViewBag.Title = "Order";
+	Layout = "_Layout";
+}
+
+<div class="card mt-4">
+	<div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
+		<span>Order List</span>
+		<button type="button" id="btn-add-order" class="btn btn-light btn-sm">+ Add Order</button>
+	</div>
+	<div class="card-body table-responsive">
+		<table class="table table-bordered table-striped" id="order-table-element" style="width:100%"></table>
+	</div>
+</div>
+
+
+<div class="modal fade" id="order-from-modal" tabindex="-1">
+	<div class="modal-dialog modal-xl">
+		<div class="modal-content">
+			@using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "order-id", @class = "form-horizontal" }))
+			{
+				<div class="modal-header">
+					<h5 class="modal-title">Order Entry</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+
+				<div class="modal-body">
+					<div class="row mb-3">
+						<label class="col-lg-3 col-form-label">Customer Name *</label>
+						<div class="col-lg-9">
+							@Html.TextBoxFor(m => m.CustomerName, new { @class = "form-control", placeholder = "Customer Name", id = "CustomerName", @required = "required" })
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label class="col-lg-3 col-form-label">Order Date *</label>
+						<div class="col-lg-9">
+							@Html.TextBoxFor(m => m.OrderDate, new { @class = "form-control pick-date-global", placeholder = "DD-MM-YYYY", id = "OrderDate", @required = "required" })
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label class="col-lg-3 col-form-label">Total Amount</label>
+						<div class="col-lg-9">
+							@Html.TextBoxFor(m => m.TotalAmount, new { @class = "form-control", placeholder = "Total Amount", id = "TotalAmount", @readonly = "readonly" })
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label class="col-lg-3 col-form-label">Status *</label>
+						<div class="col-lg-9">
+							@Html.DropDownListFor(m => m.Status, new SelectList(new List<SelectListItem>
+						{
+						new SelectListItem { Text = "Pending", Value = "0" },
+						new SelectListItem { Text = "Completed", Value = "1" },
+						new SelectListItem { Text = "Cancelled", Value = "2" }
+						}, "Value", "Text"), "Select Status", new { @class = "form-select", id = "Status", @required = "required" })
+						</div>
+					</div>
+
+					<div class="card border mt-3">
+						<div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
+							<span>Order Items</span>
+							<button type="button" id="btnAddItem" class="btn btn-light btn-sm">+ Add Item</button>
+						</div>
+						<div class="card-body p-0">
+							<div class="table-responsive">
+								<table class="table table-bordered mb-0" id="orderItemTable">
+									<thead class="table-light">
+										<tr>
+											<th style="width: 35%">Product</th>
+											<th style="width: 15%">Quantity</th>
+											<th style="width: 20%">Unit Price</th>
+											<th style="width: 20%">Sub Total</th>
+											<th style="width: 10%">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="modal-footer">
+					<button id="order-btn-save" type="button" class="btn btn-success">Save Order</button>
+				</div>
+			}
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<script src="~/js/ajax-manager.js"></script>
+	<script src="~/js/order.js" asp-append-version="true"></script>
+}

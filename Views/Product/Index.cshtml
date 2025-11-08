@@ -1,0 +1,72 @@
+﻿@model MiniInventoryManagementAPI.DTOs.ProductDto
+@{
+    ViewBag.Title = "Product";
+    Layout = "_Layout";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
+        <span>Product List</span>
+        <button type="button" id="btn-add-product" class="btn btn-light btn-sm">+ Add Product</button>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-bordered table-striped" id="product-table-element" style="width:100%"></table>
+    </div>
+</div>
+
+
+<div class="modal" id="product-from-modal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "product-id", @class = "form-horizontal" }))
+            {
+                <div class="modal-header">
+                    <h5 class="modal-title">Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row mb-3">
+                        <label class="col-lg-4">Name *</label>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @type = "text", placeholder = "Name", @required = "required"})
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-lg-4">Price *</label>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(m => m.Price, new { @class = "form-control", @type = "number", placeholder = "Price", @required = "required" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-lg-4">Stock Quantity *</label>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(m => m.StockQuantity, new { @class = "form-control", @type = "number", placeholder = "Stock Quantity", @required = "required" })
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-lg-4">Description</label>
+                        <div class="col-lg-8">
+                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control", placeholder = "Description" })
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="product-btn-save" type="button" class="btn btn-success">Save Change</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/ajax-manager.js"></script>
+	<script src="~/js/product.js" asp-append-version="true"></script>
+
+}
+
