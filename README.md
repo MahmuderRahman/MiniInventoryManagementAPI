@@ -3,6 +3,8 @@
   API support
   Database integration (SQL Server)
   Swagger UI support
+  DTO: API response manage
+  AutoMapper: model to DTO mapping
 
  ## Project Structure
   Controllers: API and MVC controllers
@@ -10,6 +12,7 @@
   Views: Razor pages
   Context: MiniInventoryDbContext
   Service: Business logic services
+  Mapping: AutoMapper mapping profiles
 
  ## Setup Instructions
   Clone the repository git-bash
