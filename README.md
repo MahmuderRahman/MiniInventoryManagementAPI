@@ -5,6 +5,8 @@
   Swagger UI support
   DTO: API response manage
   AutoMapper: model to DTO mapping
+  Repository Pattern: clean data access layer
+  Dependency Injection (DI): loosely coupled architecture
 
  ## Framework
   .NET 8.0
@@ -15,6 +17,7 @@
   Views: Razor pages
   Context: MiniInventoryDbContext
   Service: Business logic services
+  Repository: Data access logic layer
   Mapping: AutoMapper mapping profiles
 
  ## Setup Instructions
